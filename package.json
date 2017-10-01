@@ -1,0 +1,42 @@
+{
+  "name": "@pracujwpl/jobs-apollo-queries",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest --bail",
+    "test:watch": "jest --watch --bail",
+    "tslint": "tslint --config tsling.json src/**/* test/**/*",
+    "prettier": "prettier --config .prettierrc --write src/**/* test/**/*",
+    "prepush": "npm run test",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run prettier",
+      "git add"
+    ]
+  },
+  "author": "Tomasz Kula",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/jest": "*",
+    "husky": "*",
+    "jest": "*",
+    "lint-staged": "*",
+    "ts-jest": "*",
+    "tslint": "*",
+    "typescript": "*"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setupJest.ts"
+  }
+}
